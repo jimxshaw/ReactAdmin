@@ -1,6 +1,6 @@
 {
   "name": "ps-redux",
-  "description": "React and Redux Pluralsight course by Cory House",
+  "description": "React and Redux application",
   "scripts": {},
   "dependencies": {
     "bootstrap": "4.3.1",
