@@ -11,7 +11,7 @@ class CoursesPage extends React.Component {
     };
   }
 
-  handleChange(event) {
+  handleChange = event => {
     // The ellipses clones existing state and then
     // overrode the value of title.
     const course = {
@@ -20,7 +20,7 @@ class CoursesPage extends React.Component {
     };
 
     this.setState({ title: course });
-  }
+  };
 
   render() {
     return (
