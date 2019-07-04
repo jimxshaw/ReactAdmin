@@ -1,15 +1,11 @@
 import React from "react";
 
 class CoursesPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      course: {
-        title: ""
-      }
-    };
-  }
+  state = {
+    course: {
+      title: ""
+    }
+  };
 
   handleChange = event => {
     // The ellipses clones existing state and then
