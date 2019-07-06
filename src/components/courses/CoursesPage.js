@@ -26,7 +26,9 @@ class CoursesPage extends React.Component {
 
     // Connect function below automatically adds dispatch as a
     // prop if the user didn't declare mapDispatchToProps.
-    this.props.dispatch(courseActions.createCourse(this.state.course));
+    // Since it is declared below, we can call create course
+    // action directly from props.
+    this.props.createCourse(this.state.course);
   };
 
   render() {
@@ -49,7 +51,7 @@ class CoursesPage extends React.Component {
 }
 
 CoursesPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  createCourse: PropTypes.func.isRequired,
   courses: PropTypes.array.isRequired
 };
 
@@ -61,4 +63,16 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(CoursesPage);
+// This function determines what actions are
+// available on props in our component.
+function mapDispatchToProps(dispatch) {
+  return {
+    // Action creators must be called by dispatch.
+    createCourse: course => dispatch(courseActions.createCourse(course))
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoursesPage);
