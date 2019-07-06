@@ -1,6 +1,8 @@
+import * as types from "../actions/actionTypes";
+
 export default function courseReducer(state = [], action) {
   switch (action.type) {
-    case "CREATE_COURSE":
+    case types.CREATE_COURSE:
       // Clone existing state array. Then add the cloned course passed in.
       // This will update the redux store by adding the new action
       // passed in on action.course.
